@@ -15,6 +15,9 @@
 		489CEEC0270938C900C3172B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489CEEBE270938C900C3172B /* LaunchScreen.storyboard */; };
 		489CEECB270938CA00C3172B /* NashvilleNumbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEECA270938CA00C3172B /* NashvilleNumbersTests.swift */; };
 		489CEED6270938CA00C3172B /* NashvilleNumbersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEED5270938CA00C3172B /* NashvilleNumbersUITests.swift */; };
+		48E4F9412740403700AE2461 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9402740403700AE2461 /* KeyView.swift */; };
+		48E4F9432740776B00AE2461 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9422740776B00AE2461 /* Key.swift */; };
+		48E4F947274092D900AE2461 /* keys.json in Resources */ = {isa = PBXBuildFile; fileRef = 48E4F946274092D900AE2461 /* keys.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		489CEED1270938CA00C3172B /* NashvilleNumbersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NashvilleNumbersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		489CEED5270938CA00C3172B /* NashvilleNumbersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NashvilleNumbersUITests.swift; sourceTree = "<group>"; };
 		489CEED7270938CA00C3172B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48E4F9402740403700AE2461 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
+		48E4F9422740776B00AE2461 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		48E4F946274092D900AE2461 /* keys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keys.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +108,13 @@
 				489CEEB3270938C500C3172B /* AppDelegate.swift */,
 				489CEEB5270938C500C3172B /* SceneDelegate.swift */,
 				489CEEB7270938C500C3172B /* ContentView.swift */,
+				48E4F946274092D900AE2461 /* keys.json */,
 				489CEEB9270938C900C3172B /* Assets.xcassets */,
 				489CEEBE270938C900C3172B /* LaunchScreen.storyboard */,
 				489CEEC1270938C900C3172B /* Info.plist */,
 				489CEEBB270938C900C3172B /* Preview Content */,
+				48E4F9402740403700AE2461 /* KeyView.swift */,
+				48E4F9422740776B00AE2461 /* Key.swift */,
 			);
 			path = NashvilleNumbers;
 			sourceTree = "<group>";
@@ -243,6 +252,7 @@
 				489CEEC0270938C900C3172B /* LaunchScreen.storyboard in Resources */,
 				489CEEBD270938C900C3172B /* Preview Assets.xcassets in Resources */,
 				489CEEBA270938C900C3172B /* Assets.xcassets in Resources */,
+				48E4F947274092D900AE2461 /* keys.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E4F9412740403700AE2461 /* KeyView.swift in Sources */,
+				48E4F9432740776B00AE2461 /* Key.swift in Sources */,
 				489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */,
 				489CEEB6270938C500C3172B /* SceneDelegate.swift in Sources */,
 				489CEEB8270938C500C3172B /* ContentView.swift in Sources */,
@@ -436,6 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NashvilleNumbers/Preview Content\"";
+				DEVELOPMENT_TEAM = T9W7CP3NF4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NashvilleNumbers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NashvilleNumbers/Preview Content\"";
+				DEVELOPMENT_TEAM = T9W7CP3NF4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NashvilleNumbers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
