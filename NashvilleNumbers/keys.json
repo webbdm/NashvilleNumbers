@@ -1,0 +1,87 @@
+{
+  "keys": [
+    {
+      "id": 1,
+      "keyName": "A",
+      "notes": [
+        {
+          "id": 1,
+          "number": 1,
+          "noteName": "A"
+        },
+        {
+          "id": 2,
+          "number": 2,
+          "noteName": "Bm"
+        },
+        {
+          "id": 3,
+          "number": 3,
+          "noteName": "C#m"
+        },
+        {
+          "id": 4,
+          "number": 4,
+          "noteName": "D"
+        },
+        {
+          "id": 5,
+          "number": 5,
+          "noteName": "E"
+        },
+        {
+          "id": 6,
+          "number": 6,
+          "noteName": "F#m"
+        },
+        {
+          "id": 7,
+          "number": 7,
+          "noteName": "G#"
+        }
+      ]
+    },
+    {
+        "id": 2,
+        "keyName": "C",
+        "notes": [
+          {
+            "id": 8,
+            "number": 1,
+            "noteName": "C"
+          },
+          {
+            "id": 9,
+            "number": 2,
+            "noteName": "Dm"
+          },
+          {
+            "id": 10,
+            "number": 3,
+            "noteName": "Em"
+          },
+          {
+            "id": 11,
+            "number": 4,
+            "noteName": "F"
+          },
+          {
+            "id": 12,
+            "number": 5,
+            "noteName": "G"
+          },
+          {
+            "id": 13,
+            "number": 6,
+            "noteName": "Am"
+          },
+          {
+            "id": 14,
+            "number": 7,
+            "noteName": "B"
+          }
+        ]
+      }
+  ]
+}
+
