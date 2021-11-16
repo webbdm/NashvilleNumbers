@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483B2EB42741C6DC00184E12 /* tenet.png in Resources */ = {isa = PBXBuildFile; fileRef = 483B2EB32741C6DC00184E12 /* tenet.png */; };
+		483B2EB62741C7EC00184E12 /* avatar.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 483B2EB52741C7EC00184E12 /* avatar.imageset */; };
 		489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB3270938C500C3172B /* AppDelegate.swift */; };
 		489CEEB6270938C500C3172B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB5270938C500C3172B /* SceneDelegate.swift */; };
 		489CEEB8270938C500C3172B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB7270938C500C3172B /* ContentView.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		483B2EB32741C6DC00184E12 /* tenet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tenet.png; sourceTree = "<group>"; };
+		483B2EB52741C7EC00184E12 /* avatar.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = avatar.imageset; sourceTree = "<group>"; };
 		489CEEB0270938C500C3172B /* NashvilleNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NashvilleNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489CEEB3270938C500C3172B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489CEEB5270938C500C3172B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +113,9 @@
 				489CEEB5270938C500C3172B /* SceneDelegate.swift */,
 				489CEEB7270938C500C3172B /* ContentView.swift */,
 				48E4F946274092D900AE2461 /* keys.json */,
+				483B2EB32741C6DC00184E12 /* tenet.png */,
 				489CEEB9270938C900C3172B /* Assets.xcassets */,
+				483B2EB52741C7EC00184E12 /* avatar.imageset */,
 				489CEEBE270938C900C3172B /* LaunchScreen.storyboard */,
 				489CEEC1270938C900C3172B /* Info.plist */,
 				489CEEBB270938C900C3172B /* Preview Content */,
@@ -253,6 +259,8 @@
 				489CEEBD270938C900C3172B /* Preview Assets.xcassets in Resources */,
 				489CEEBA270938C900C3172B /* Assets.xcassets in Resources */,
 				48E4F947274092D900AE2461 /* keys.json in Resources */,
+				483B2EB42741C6DC00184E12 /* tenet.png in Resources */,
+				483B2EB62741C7EC00184E12 /* avatar.imageset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

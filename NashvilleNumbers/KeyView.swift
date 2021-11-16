@@ -27,17 +27,23 @@ struct KeyView: View {
         .background(Color.blue)
         .cornerRadius(20)
         .frame(maxWidth: .infinity)
+        Spacer()
         
         VStack(){
             ForEach(key.notes) { note in
-                 HStack(){
-                    Text(String(note.number))
+            HStack(){
+                Text(String(note.number))
                     .frame(alignment: .leading )
-                    .font(.system(size: 80.0))
+                    .font(.system(size: 60.0))
                     .foregroundColor(Color.white)
-
-                Text("-").font(.title)
-                Text(note.noteName).font(.system(size: 80.0))
+                Spacer()
+                
+                Text("-")
+                    .frame(alignment: .leading )
+                    .font(.title)
+                Spacer()
+                
+                Text(note.noteName).font(.system(size: 60.0))
                     .foregroundColor(Color.white)
             }.frame(maxWidth: .infinity)
         }
@@ -46,15 +52,21 @@ struct KeyView: View {
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .border(Color.blue)
+    Spacer()
         
     
-    HStack(){
-        Text("<")
-        Text("Back")
-    }.frame(alignment: .leading )
+//    HStack(){
+//        Text("<")
+//        Text("Back")
+//        Spacer()
+//    }
+//    .frame(alignment: .leading )
+         
+        
     
     }
-    .padding(50)
+    .padding(.leading,20)
+    .padding(.trailing,20)
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color.red.edgesIgnoringSafeArea(.all))
 }
@@ -64,8 +76,11 @@ struct KeyView: View {
 
 struct KeyView_Previews: PreviewProvider {
     static var previews: some View {
-       KeyView(key: Key(id: 1, keyName: "C", notes: [
-                  Note(id:1,number:1,noteName: "C"),
+       KeyView(key:
+        Key(id: 1,
+            keyName: "C",
+            notes: [
+                  Note(id:1,number:1,noteName: "C#m"),
                   Note(id:1,number:1,noteName: "Dm"),
                   Note(id:1,number:1,noteName: "Em"),
                   Note(id:1,number:1,noteName: "F"),
