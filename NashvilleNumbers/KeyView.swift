@@ -4,7 +4,8 @@ struct KeyView: View {
    var key: Key
     
    var body: some View {
-    VStack{
+    VStack(spacing: 15){
+        Spacer()
         HStack(){
             VStack(){
                 Text("Key Of")
@@ -24,10 +25,11 @@ struct KeyView: View {
                    .stroke(Color.white, lineWidth: 3))
         }
         .padding()
-        .background(Color.blue)
-        .cornerRadius(20)
-        .frame(maxWidth: .infinity)
-        Spacer()
+        .background(
+            RoundedCornersShape(corners: [.topLeft, .topRight], radius: 15)
+                .fill(Color("panel"))
+        )
+        //Spacer()
         
         VStack(){
             ForEach(key.notes) { note in
@@ -50,8 +52,12 @@ struct KeyView: View {
 
     }
     .padding()
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .border(Color.blue)
+    .background(
+        RoundedCornersShape(corners: [.bottomLeft, .bottomRight], radius: 15)
+        .stroke(Color("panel"), lineWidth: 3)
+        
+    )
+        
     Spacer()
         
     
@@ -68,7 +74,7 @@ struct KeyView: View {
     .padding(.leading,20)
     .padding(.trailing,20)
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(Color.red.edgesIgnoringSafeArea(.all))
+    .background(Color("redbg").edgesIgnoringSafeArea(.all))
 }
     
 

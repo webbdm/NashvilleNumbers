@@ -287,6 +287,23 @@
         }
       ]
     }
+  ],
+  "songs" : [
+      {
+        "id": 1,
+        "name": "Sweet Child O' Mine",
+        "key": "C#"
+      },
+      {
+        "id": 2,
+        "name": "Heart Shaped Box",
+        "key": "A"
+      },
+      {
+        "id": 3,
+        "name": "Friends in Low Places",
+        "key": "A"
+      }
   ]
 }
 
