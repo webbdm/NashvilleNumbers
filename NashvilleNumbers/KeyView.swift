@@ -29,7 +29,6 @@ struct KeyView: View {
             RoundedCornersShape(corners: [.topLeft, .topRight], radius: 15)
                 .fill(Color("panel"))
         )
-        //Spacer()
         
         VStack(){
             ForEach(key.notes) { note in
@@ -59,22 +58,16 @@ struct KeyView: View {
     )
         
     Spacer()
-        
-    
-//    HStack(){
-//        Text("<")
-//        Text("Back")
-//        Spacer()
-//    }
-//    .frame(alignment: .leading )
+    .frame(alignment: .leading )
          
-        
-    
+    Spacer()
+    Spacer()
     }
     .padding(.leading,20)
     .padding(.trailing,20)
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(Color("redbg").edgesIgnoringSafeArea(.all))
+    .background(Color("bluebg").edgesIgnoringSafeArea(.all))
+    
 }
     
 

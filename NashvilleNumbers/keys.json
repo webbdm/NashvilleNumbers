@@ -43,47 +43,47 @@
     },
     {
         "id": 2,
-        "keyName": "C",
+        "keyName": "B",
         "notes": [
           {
             "id": 8,
             "number": 1,
-            "noteName": "C"
+            "noteName": "B"
           },
           {
             "id": 9,
             "number": 2,
-            "noteName": "Dm"
+            "noteName": "C#m"
           },
           {
             "id": 10,
             "number": 3,
-            "noteName": "Em"
+            "noteName": "D#m"
           },
           {
             "id": 11,
             "number": 4,
-            "noteName": "F"
+            "noteName": "E"
           },
           {
             "id": 12,
             "number": 5,
-            "noteName": "G"
+            "noteName": "F#"
           },
           {
             "id": 13,
             "number": 6,
-            "noteName": "Am"
+            "noteName": "G#m"
           },
           {
             "id": 14,
             "number": 7,
-            "noteName": "B"
+            "noteName": "A#"
           }
         ]
       },
     {
-      "id": 2,
+      "id": 3,
       "keyName": "C",
       "notes": [
         {
@@ -124,166 +124,166 @@
       ]
     },
     {
-      "id": 2,
-      "keyName": "C",
+      "id": 4,
+      "keyName": "D",
       "notes": [
         {
           "id": 8,
           "number": 1,
-          "noteName": "C"
+          "noteName": "D"
         },
         {
           "id": 9,
           "number": 2,
-          "noteName": "Dm"
+          "noteName": "Em"
         },
         {
           "id": 10,
           "number": 3,
-          "noteName": "Em"
+          "noteName": "F#m"
         },
         {
           "id": 11,
           "number": 4,
-          "noteName": "F"
+          "noteName": "G"
         },
         {
           "id": 12,
           "number": 5,
-          "noteName": "G"
+          "noteName": "A"
         },
         {
           "id": 13,
           "number": 6,
-          "noteName": "Am"
+          "noteName": "Bm"
         },
         {
           "id": 14,
           "number": 7,
-          "noteName": "B"
+          "noteName": "C#"
         }
       ]
     },
     {
-      "id": 2,
-      "keyName": "C",
+      "id": 5,
+      "keyName": "E",
       "notes": [
         {
           "id": 8,
           "number": 1,
-          "noteName": "C"
+          "noteName": "E"
         },
         {
           "id": 9,
           "number": 2,
-          "noteName": "Dm"
+          "noteName": "F#m"
         },
         {
           "id": 10,
           "number": 3,
-          "noteName": "Em"
+          "noteName": "G#m"
         },
         {
           "id": 11,
           "number": 4,
-          "noteName": "F"
+          "noteName": "A"
         },
         {
           "id": 12,
           "number": 5,
-          "noteName": "G"
+          "noteName": "B"
         },
         {
           "id": 13,
           "number": 6,
-          "noteName": "Am"
+          "noteName": "C#m"
         },
         {
           "id": 14,
           "number": 7,
-          "noteName": "B"
+          "noteName": "D#"
         }
       ]
     },
     {
-      "id": 2,
-      "keyName": "C",
+      "id": 6,
+      "keyName": "F",
       "notes": [
         {
           "id": 8,
           "number": 1,
-          "noteName": "C"
+          "noteName": "F"
         },
         {
           "id": 9,
           "number": 2,
-          "noteName": "Dm"
+          "noteName": "Gm"
         },
         {
           "id": 10,
           "number": 3,
-          "noteName": "Em"
+          "noteName": "Am"
         },
         {
           "id": 11,
           "number": 4,
-          "noteName": "F"
+          "noteName": "Bb"
         },
         {
           "id": 12,
           "number": 5,
-          "noteName": "G"
+          "noteName": "C"
         },
         {
           "id": 13,
           "number": 6,
-          "noteName": "Am"
+          "noteName": "Dm"
         },
         {
           "id": 14,
           "number": 7,
-          "noteName": "B"
+          "noteName": "E"
         }
       ]
     },
     {
-      "id": 2,
-      "keyName": "C",
+      "id": 7,
+      "keyName": "G",
       "notes": [
         {
           "id": 8,
           "number": 1,
-          "noteName": "C"
+          "noteName": "G"
         },
         {
           "id": 9,
           "number": 2,
-          "noteName": "Dm"
+          "noteName": "Am"
         },
         {
           "id": 10,
           "number": 3,
-          "noteName": "Em"
+          "noteName": "Bm"
         },
         {
           "id": 11,
           "number": 4,
-          "noteName": "F"
+          "noteName": "C"
         },
         {
           "id": 12,
           "number": 5,
-          "noteName": "G"
+          "noteName": "D"
         },
         {
           "id": 13,
           "number": 6,
-          "noteName": "Am"
+          "noteName": "Em"
         },
         {
           "id": 14,
           "number": 7,
-          "noteName": "B"
+          "noteName": "F#"
         }
       ]
     }
