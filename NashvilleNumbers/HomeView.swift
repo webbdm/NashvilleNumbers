@@ -41,24 +41,26 @@ struct HomeView: View {
                               ForEach(keys) { key in
                                      NavigationLink(destination: KeyView(key: key)) {
                                       Text(key.keyName)
-                                      .foregroundColor(.white)
-                                      .font(.system(size: 64.0))
-
+                                      .frame(width: 200, height: 320)
+                                      .font(.system(size: 100.0))
+                                       .foregroundColor(.white)
+                                      .fixedSize(horizontal: false, vertical: true)
+                                      .multilineTextAlignment(.center)
+                                      .padding()
+                                      .background(Rectangle().fill(Color("panel")))
+                                      .cornerRadius(20)
                                    }
-                                   .frame(width:155,height: 300)
-                                   .background(Color("panel"))
-                                   .cornerRadius(20)
+                                  
                               }
                           }.padding(25)
-                      }
-                      Spacer()
+                       }
+                      //Spacer()
                            
                        VStack(){
                           Text("Songs")
                            .padding(20)
                            .font(.system(size:56.0))
                            .foregroundColor(Color("lightb"))
-                           //.frame(maxWidth: .infinity, alignment: .leading)
                            
                            ForEach(songs) { song in
                                HStack(alignment: .firstTextBaseline, spacing: 175){
@@ -71,20 +73,27 @@ struct HomeView: View {
                            }
                         Spacer()
                        
-                        HStack(spacing: 105){
-                            VStack{
-                              Image(systemName: "music.note")
-                              Text("Home").foregroundColor(.white)
+                        HStack(spacing: 95){
+                            NavigationLink(destination: SongsView()) {
+                                VStack{
+                                   Image(systemName: "music.note")
+                                  Text("Home").foregroundColor(.white)
+                               }
                             }
+                            
+                             NavigationLink(destination: SongsView()) {
+                                VStack{
+                                    Image(systemName: "music.note.list")
+                                    Text("Songs").foregroundColor(.white)
+                                }
+                              }
+                            
+                            NavigationLink(destination: SongsView()) {
                             VStack{
                               Image(systemName: "music.note.list")
-                              Text("Songs").foregroundColor(.white)
+                              Text("Setlists").foregroundColor(.white)
                                 
                             }
-                            VStack{
-                              Image(systemName: "music.note.list")
-                              Text("Riffs").foregroundColor(.white)
-                                
                             }
                         }
                            
@@ -94,7 +103,7 @@ struct HomeView: View {
                            .fill(Color("panel"))
                            .edgesIgnoringSafeArea(.bottom)
                            
-                   )
+                   ).frame(maxHeight:300)
                  }.onAppear(perform: readFile)
                            
                }
