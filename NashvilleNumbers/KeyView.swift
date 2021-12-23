@@ -30,7 +30,7 @@ struct KeyView: View {
                 .fill(Color("panel"))
         )
         
-        VStack(){
+        VStack(spacing: 10){
             ForEach(key.notes) { note in
             HStack(){
                 Text(String(note.number))
@@ -80,12 +80,12 @@ struct KeyView_Previews: PreviewProvider {
             keyName: "C",
             notes: [
                   Note(id:1,number:1,noteName: "C#m"),
-                  Note(id:1,number:1,noteName: "Dm"),
-                  Note(id:1,number:1,noteName: "Em"),
-                  Note(id:1,number:1,noteName: "F"),
-                  Note(id:1,number:1,noteName: "G"),
-                  Note(id:1,number:1,noteName: "Am"),
-                  Note(id:1,number:1,noteName: "B")
+                  Note(id:2,number:2,noteName: "Dm"),
+                  Note(id:3,number:3,noteName: "Em"),
+                  Note(id:4,number:4,noteName: "F"),
+                  Note(id:5,number:5,noteName: "G"),
+                  Note(id:6,number:6,noteName: "Am"),
+                  Note(id:7,number:7,noteName: "B")
               ]))
     }
 }

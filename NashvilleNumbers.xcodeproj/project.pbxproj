@@ -23,6 +23,7 @@
 		48E4F9412740403700AE2461 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9402740403700AE2461 /* KeyView.swift */; };
 		48E4F9432740776B00AE2461 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9422740776B00AE2461 /* Key.swift */; };
 		48E4F947274092D900AE2461 /* keys.json in Resources */ = {isa = PBXBuildFile; fileRef = 48E4F946274092D900AE2461 /* keys.json */; };
+		48F02BF22774ED0A00C9954C /* SetlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F02BF12774ED0A00C9954C /* SetlistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		48E4F9402740403700AE2461 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		48E4F9422740776B00AE2461 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		48E4F946274092D900AE2461 /* keys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keys.json; sourceTree = "<group>"; };
+		48F02BF12774ED0A00C9954C /* SetlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				48B9015D276FD33F00E4B0FD /* Song.swift */,
 				48B9015F276FD51E00E4B0FD /* SongsView.swift */,
 				48B6C712277043CB008278EC /* HomeView.swift */,
+				48F02BF12774ED0A00C9954C /* SetlistView.swift */,
 			);
 			path = NashvilleNumbers;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				48E4F9412740403700AE2461 /* KeyView.swift in Sources */,
 				48E4F9432740776B00AE2461 /* Key.swift in Sources */,
 				489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */,
+				48F02BF22774ED0A00C9954C /* SetlistView.swift in Sources */,
 				489CEEB6270938C500C3172B /* SceneDelegate.swift in Sources */,
 				48B9015C276FBF8E00E4B0FD /* RoundedCorners.swift in Sources */,
 				489CEEB8270938C500C3172B /* ContentView.swift in Sources */,

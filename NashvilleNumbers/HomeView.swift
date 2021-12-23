@@ -39,7 +39,7 @@ struct HomeView: View {
                        ScrollView(.horizontal){
                           HStack(spacing: 50){
                               ForEach(keys) { key in
-                                     NavigationLink(destination: KeyView(key: key)) {
+                                      NavigationLink(destination: KeyView(key: key)) {
                                       Text(key.keyName)
                                       .frame(width: 200, height: 320)
                                       .font(.system(size: 100.0))
@@ -54,7 +54,6 @@ struct HomeView: View {
                               }
                           }.padding(25)
                        }
-                      //Spacer()
                            
                        VStack(){
                           Text("Songs")
@@ -74,21 +73,21 @@ struct HomeView: View {
                         Spacer()
                        
                         HStack(spacing: 95){
-                            NavigationLink(destination: SongsView()) {
+                            NavigationLink(destination: SongsView(songs: $songs)) {
                                 VStack{
                                    Image(systemName: "music.note")
                                   Text("Home").foregroundColor(.white)
                                }
                             }
                             
-                             NavigationLink(destination: SongsView()) {
+                            NavigationLink(destination: SongsView(songs: $songs)) {
                                 VStack{
                                     Image(systemName: "music.note.list")
                                     Text("Songs").foregroundColor(.white)
                                 }
                               }
                             
-                            NavigationLink(destination: SongsView()) {
+                            NavigationLink(destination: SetlistView()) {
                             VStack{
                               Image(systemName: "music.note.list")
                               Text("Setlists").foregroundColor(.white)
