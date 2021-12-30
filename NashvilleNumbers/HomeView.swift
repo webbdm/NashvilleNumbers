@@ -40,7 +40,7 @@ struct HomeView: View {
                           HStack(spacing: 50){
                               ForEach(keys) { key in
                                       NavigationLink(destination: KeyView(key: key)) {
-                                      Text(key.keyName)
+                                      Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
                                       .frame(width: 200, height: 320)
                                       .font(.system(size: 100.0))
                                        .foregroundColor(.white)
@@ -66,7 +66,7 @@ struct HomeView: View {
                                    Text(song.name)
                                        .frame(maxWidth: .infinity, alignment: .leading)
                                        .foregroundColor(.white)
-                                   Text(song.key)
+                                Text(song.key.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
                                        .foregroundColor(Color("lightb"))
                                }.padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 20))
                            }

@@ -11,7 +11,7 @@ struct KeyView: View {
                 Text("Key Of")
                 .font(.system(size: 20.0))
                 .foregroundColor(.white)
-                Text(key.keyName)
+                Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
                 .font(.system(size: 60.0))
                 .foregroundColor(.white)
             }
@@ -44,7 +44,7 @@ struct KeyView: View {
                     .font(.title)
                 Spacer()
                 
-                Text(note.noteName).font(.system(size: 60.0))
+                Text(note.noteName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil)).font(.system(size: 60.0))
                     .foregroundColor(Color.white)
             }.frame(maxWidth: .infinity)
         }
