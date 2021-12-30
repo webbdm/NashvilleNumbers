@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483B2EB42741C6DC00184E12 /* tenet.png in Resources */ = {isa = PBXBuildFile; fileRef = 483B2EB32741C6DC00184E12 /* tenet.png */; };
 		489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB3270938C500C3172B /* AppDelegate.swift */; };
 		489CEEB6270938C500C3172B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB5270938C500C3172B /* SceneDelegate.swift */; };
 		489CEEB8270938C500C3172B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB7270938C500C3172B /* ContentView.swift */; };
@@ -15,9 +16,14 @@
 		489CEEC0270938C900C3172B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489CEEBE270938C900C3172B /* LaunchScreen.storyboard */; };
 		489CEECB270938CA00C3172B /* NashvilleNumbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEECA270938CA00C3172B /* NashvilleNumbersTests.swift */; };
 		489CEED6270938CA00C3172B /* NashvilleNumbersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEED5270938CA00C3172B /* NashvilleNumbersUITests.swift */; };
+		48B6C713277043CB008278EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6C712277043CB008278EC /* HomeView.swift */; };
+		48B9015C276FBF8E00E4B0FD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B9015B276FBF8E00E4B0FD /* RoundedCorners.swift */; };
+		48B9015E276FD33F00E4B0FD /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B9015D276FD33F00E4B0FD /* Song.swift */; };
+		48B90160276FD51E00E4B0FD /* SongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B9015F276FD51E00E4B0FD /* SongsView.swift */; };
 		48E4F9412740403700AE2461 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9402740403700AE2461 /* KeyView.swift */; };
 		48E4F9432740776B00AE2461 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9422740776B00AE2461 /* Key.swift */; };
 		48E4F947274092D900AE2461 /* keys.json in Resources */ = {isa = PBXBuildFile; fileRef = 48E4F946274092D900AE2461 /* keys.json */; };
+		48F02BF22774ED0A00C9954C /* SetlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F02BF12774ED0A00C9954C /* SetlistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		483B2EB32741C6DC00184E12 /* tenet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tenet.png; sourceTree = "<group>"; };
 		489CEEB0270938C500C3172B /* NashvilleNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NashvilleNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489CEEB3270938C500C3172B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489CEEB5270938C500C3172B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +59,14 @@
 		489CEED1270938CA00C3172B /* NashvilleNumbersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NashvilleNumbersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		489CEED5270938CA00C3172B /* NashvilleNumbersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NashvilleNumbersUITests.swift; sourceTree = "<group>"; };
 		489CEED7270938CA00C3172B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48B6C712277043CB008278EC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		48B9015B276FBF8E00E4B0FD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		48B9015D276FD33F00E4B0FD /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		48B9015F276FD51E00E4B0FD /* SongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsView.swift; sourceTree = "<group>"; };
 		48E4F9402740403700AE2461 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		48E4F9422740776B00AE2461 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		48E4F946274092D900AE2461 /* keys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keys.json; sourceTree = "<group>"; };
+		48F02BF12774ED0A00C9954C /* SetlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +121,18 @@
 				489CEEB5270938C500C3172B /* SceneDelegate.swift */,
 				489CEEB7270938C500C3172B /* ContentView.swift */,
 				48E4F946274092D900AE2461 /* keys.json */,
+				483B2EB32741C6DC00184E12 /* tenet.png */,
 				489CEEB9270938C900C3172B /* Assets.xcassets */,
 				489CEEBE270938C900C3172B /* LaunchScreen.storyboard */,
 				489CEEC1270938C900C3172B /* Info.plist */,
 				489CEEBB270938C900C3172B /* Preview Content */,
 				48E4F9402740403700AE2461 /* KeyView.swift */,
 				48E4F9422740776B00AE2461 /* Key.swift */,
+				48B9015B276FBF8E00E4B0FD /* RoundedCorners.swift */,
+				48B9015D276FD33F00E4B0FD /* Song.swift */,
+				48B9015F276FD51E00E4B0FD /* SongsView.swift */,
+				48B6C712277043CB008278EC /* HomeView.swift */,
+				48F02BF12774ED0A00C9954C /* SetlistView.swift */,
 			);
 			path = NashvilleNumbers;
 			sourceTree = "<group>";
@@ -253,6 +271,7 @@
 				489CEEBD270938C900C3172B /* Preview Assets.xcassets in Resources */,
 				489CEEBA270938C900C3172B /* Assets.xcassets in Resources */,
 				48E4F947274092D900AE2461 /* keys.json in Resources */,
+				483B2EB42741C6DC00184E12 /* tenet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,11 +296,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B6C713277043CB008278EC /* HomeView.swift in Sources */,
+				48B9015E276FD33F00E4B0FD /* Song.swift in Sources */,
 				48E4F9412740403700AE2461 /* KeyView.swift in Sources */,
 				48E4F9432740776B00AE2461 /* Key.swift in Sources */,
 				489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */,
+				48F02BF22774ED0A00C9954C /* SetlistView.swift in Sources */,
 				489CEEB6270938C500C3172B /* SceneDelegate.swift in Sources */,
+				48B9015C276FBF8E00E4B0FD /* RoundedCorners.swift in Sources */,
 				489CEEB8270938C500C3172B /* ContentView.swift in Sources */,
+				48B90160276FD51E00E4B0FD /* SongsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

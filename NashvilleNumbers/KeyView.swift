@@ -4,13 +4,14 @@ struct KeyView: View {
    var key: Key
     
    var body: some View {
-    VStack{
+    VStack(spacing: 15){
+        Spacer()
         HStack(){
             VStack(){
                 Text("Key Of")
                 .font(.system(size: 20.0))
                 .foregroundColor(.white)
-                Text(key.keyName)
+                Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
                 .font(.system(size: 60.0))
                 .foregroundColor(.white)
             }
@@ -24,39 +25,49 @@ struct KeyView: View {
                    .stroke(Color.white, lineWidth: 3))
         }
         .padding()
-        .background(Color.blue)
-        .cornerRadius(20)
-        .frame(maxWidth: .infinity)
+        .background(
+            RoundedCornersShape(corners: [.topLeft, .topRight], radius: 15)
+                .fill(Color("panel"))
+        )
         
-        VStack(){
+        VStack(spacing: 10){
             ForEach(key.notes) { note in
-                 HStack(){
-                    Text(String(note.number))
+            HStack(){
+                Text(String(note.number))
                     .frame(alignment: .leading )
-                    .font(.system(size: 80.0))
+                    .font(.system(size: 60.0))
                     .foregroundColor(Color.white)
-
-                Text("-").font(.title)
-                Text(note.noteName).font(.system(size: 80.0))
+                Spacer()
+                
+                Text("-")
+                    .frame(alignment: .leading )
+                    .font(.title)
+                Spacer()
+                
+                Text(note.noteName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil)).font(.system(size: 60.0))
                     .foregroundColor(Color.white)
             }.frame(maxWidth: .infinity)
         }
 
     }
     .padding()
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .border(Color.blue)
+    .background(
+        RoundedCornersShape(corners: [.bottomLeft, .bottomRight], radius: 15)
+        .stroke(Color("panel"), lineWidth: 3)
         
-    
-    HStack(){
-        Text("<")
-        Text("Back")
-    }.frame(alignment: .leading )
-    
+    )
+        
+    Spacer()
+    .frame(alignment: .leading )
+         
+    Spacer()
+    Spacer()
     }
-    .padding(50)
+    .padding(.leading,20)
+    .padding(.trailing,20)
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(Color.red.edgesIgnoringSafeArea(.all))
+    .background(Color("bluebg").edgesIgnoringSafeArea(.all))
+    
 }
     
 
@@ -64,14 +75,17 @@ struct KeyView: View {
 
 struct KeyView_Previews: PreviewProvider {
     static var previews: some View {
-       KeyView(key: Key(id: 1, keyName: "C", notes: [
-                  Note(id:1,number:1,noteName: "C"),
-                  Note(id:1,number:1,noteName: "Dm"),
-                  Note(id:1,number:1,noteName: "Em"),
-                  Note(id:1,number:1,noteName: "F"),
-                  Note(id:1,number:1,noteName: "G"),
-                  Note(id:1,number:1,noteName: "Am"),
-                  Note(id:1,number:1,noteName: "B")
+       KeyView(key:
+        Key(id: 1,
+            keyName: "C",
+            notes: [
+                  Note(id:1,number:1,noteName: "C#m"),
+                  Note(id:2,number:2,noteName: "Dm"),
+                  Note(id:3,number:3,noteName: "Em"),
+                  Note(id:4,number:4,noteName: "F"),
+                  Note(id:5,number:5,noteName: "G"),
+                  Note(id:6,number:6,noteName: "Am"),
+                  Note(id:7,number:7,noteName: "B")
               ]))
     }
 }
