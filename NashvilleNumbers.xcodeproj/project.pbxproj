@@ -18,8 +18,9 @@
 		489CEED6270938CA00C3172B /* NashvilleNumbersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEED5270938CA00C3172B /* NashvilleNumbersUITests.swift */; };
 		48B6C713277043CB008278EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B6C712277043CB008278EC /* HomeView.swift */; };
 		48B9015C276FBF8E00E4B0FD /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B9015B276FBF8E00E4B0FD /* RoundedCorners.swift */; };
-		48B9015E276FD33F00E4B0FD /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B9015D276FD33F00E4B0FD /* Song.swift */; };
 		48B90160276FD51E00E4B0FD /* SongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B9015F276FD51E00E4B0FD /* SongsView.swift */; };
+		48BF0829277E8687002B83D0 /* Song.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48BF0827277E8687002B83D0 /* Song.xcdatamodeld */; };
+		48BF082B277E86B2002B83D0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BF082A277E86B2002B83D0 /* CoreDataStack.swift */; };
 		48E4F9412740403700AE2461 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9402740403700AE2461 /* KeyView.swift */; };
 		48E4F9432740776B00AE2461 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9422740776B00AE2461 /* Key.swift */; };
 		48E4F947274092D900AE2461 /* keys.json in Resources */ = {isa = PBXBuildFile; fileRef = 48E4F946274092D900AE2461 /* keys.json */; };
@@ -61,8 +62,9 @@
 		489CEED7270938CA00C3172B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48B6C712277043CB008278EC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		48B9015B276FBF8E00E4B0FD /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
-		48B9015D276FD33F00E4B0FD /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		48B9015F276FD51E00E4B0FD /* SongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsView.swift; sourceTree = "<group>"; };
+		48BF0828277E8687002B83D0 /* Song.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Song.xcdatamodel; sourceTree = "<group>"; };
+		48BF082A277E86B2002B83D0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		48E4F9402740403700AE2461 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		48E4F9422740776B00AE2461 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		48E4F946274092D900AE2461 /* keys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keys.json; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 		489CEEB2270938C500C3172B /* NashvilleNumbers */ = {
 			isa = PBXGroup;
 			children = (
+				48BF082C277EA6F6002B83D0 /* Controllers */,
+				48BF0826277E8635002B83D0 /* Models */,
 				489CEEB3270938C500C3172B /* AppDelegate.swift */,
 				489CEEB5270938C500C3172B /* SceneDelegate.swift */,
 				489CEEB7270938C500C3172B /* ContentView.swift */,
@@ -129,10 +133,10 @@
 				48E4F9402740403700AE2461 /* KeyView.swift */,
 				48E4F9422740776B00AE2461 /* Key.swift */,
 				48B9015B276FBF8E00E4B0FD /* RoundedCorners.swift */,
-				48B9015D276FD33F00E4B0FD /* Song.swift */,
 				48B9015F276FD51E00E4B0FD /* SongsView.swift */,
 				48B6C712277043CB008278EC /* HomeView.swift */,
 				48F02BF12774ED0A00C9954C /* SetlistView.swift */,
+				48BF082A277E86B2002B83D0 /* CoreDataStack.swift */,
 			);
 			path = NashvilleNumbers;
 			sourceTree = "<group>";
@@ -161,6 +165,21 @@
 				489CEED7270938CA00C3172B /* Info.plist */,
 			);
 			path = NashvilleNumbersUITests;
+			sourceTree = "<group>";
+		};
+		48BF0826277E8635002B83D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48BF0827277E8687002B83D0 /* Song.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48BF082C277EA6F6002B83D0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,10 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B6C713277043CB008278EC /* HomeView.swift in Sources */,
-				48B9015E276FD33F00E4B0FD /* Song.swift in Sources */,
 				48E4F9412740403700AE2461 /* KeyView.swift in Sources */,
+				48BF082B277E86B2002B83D0 /* CoreDataStack.swift in Sources */,
 				48E4F9432740776B00AE2461 /* Key.swift in Sources */,
 				489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */,
+				48BF0829277E8687002B83D0 /* Song.xcdatamodeld in Sources */,
 				48F02BF22774ED0A00C9954C /* SetlistView.swift in Sources */,
 				489CEEB6270938C500C3172B /* SceneDelegate.swift in Sources */,
 				48B9015C276FBF8E00E4B0FD /* RoundedCorners.swift in Sources */,
@@ -626,6 +646,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		48BF0827277E8687002B83D0 /* Song.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48BF0828277E8687002B83D0 /* Song.xcdatamodel */,
+			);
+			currentVersion = 48BF0828277E8687002B83D0 /* Song.xcdatamodel */;
+			path = Song.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 489CEEA8270938C500C3172B /* Project object */;
 }

@@ -1,9 +1,14 @@
-
 import SwiftUI
+import CoreData
 
 struct HomeView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @State var keys: [Key] = []
-    @State var songs: [Song] = []
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Song.name, ascending: true)],
+        animation: .default)
+    var songs: FetchedResults<Song>
 
     
     private func getScale(proxy: GeometryProxy) -> CGFloat {
@@ -61,26 +66,28 @@ struct HomeView: View {
                            .font(.system(size:56.0))
                            .foregroundColor(Color("lightb"))
                            
-                           ForEach(songs) { song in
+                        ScrollView(.vertical){
+                        ForEach(songs, id: \.self) { song in
                                HStack(alignment: .firstTextBaseline, spacing: 175){
-                                   Text(song.name)
+                                    song.name.map(Text.init)
                                        .frame(maxWidth: .infinity, alignment: .leading)
                                        .foregroundColor(.white)
-                                Text(song.key.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
+                                Text(song.key ?? "")
                                        .foregroundColor(Color("lightb"))
                                }.padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 20))
                            }
+                        }
                         Spacer()
                        
                         HStack(spacing: 95){
-                            NavigationLink(destination: SongsView(songs: $songs)) {
+                            NavigationLink(destination: SongsView()) {
                                 VStack{
                                    Image(systemName: "music.note")
                                   Text("Home").foregroundColor(.white)
                                }
                             }
                             
-                            NavigationLink(destination: SongsView(songs: $songs)) {
+                            NavigationLink(destination: SongsView()) {
                                 VStack{
                                     Image(systemName: "music.note.list")
                                     Text("Songs").foregroundColor(.white)
@@ -118,12 +125,6 @@ struct HomeView: View {
               let decoder = JSONDecoder()
               let jsonData = try! decoder.decode(JSONData.self, from:data)
               self.keys = jsonData.keys
-          
-              let url2 = Bundle.main.url(forResource: "keys", withExtension: "json")!
-              let data2 = try! Data(contentsOf: url2)
-              let decode = JSONDecoder()
-              let jsonData2 = try! decode.decode(JSONData.self, from:data2)
-              self.songs = jsonData2.songs
       }
       
 }
@@ -132,10 +133,15 @@ struct HomeView: View {
 
 struct JSONData : Decodable {
     let keys: [Key]
-    let songs: [Song]
 }
 
 struct HomeView_Previews: PreviewProvider {
+    
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Song.name, ascending: true)],
+        animation: .default)
+    var songs: FetchedResults<Song>
     static var previews: some View {
         HomeView(keys:
             [Key(id: 1, keyName: "C", notes: [
@@ -146,8 +152,8 @@ struct HomeView_Previews: PreviewProvider {
             Note(id:1,number:1,noteName: "G"),
             Note(id:1,number:1,noteName: "Am"),
             Note(id:1,number:1,noteName: "B")
-        ])],
-        songs:[Song(id: 1, name: "Heart Shaped Box", key: "A")]
+        ])]//,
+                // songs: songs //Song(id: 1, name: "Heart Shaped Box", key: "A")
      )
    }
 }

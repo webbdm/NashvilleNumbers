@@ -1,12 +1,30 @@
 import SwiftUI
+import CoreData
 
 struct SongsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @State private var name: String = ""
     @State private var key: String = ""
-    @Binding var songs: [Song]
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Song.name, ascending: true)],
+        animation: .default)
+    var songs: FetchedResults<Song>
+    
+    func saveContext() {
+      do {
+        try viewContext.save()
+      } catch {
+        print("Error saving managed object context: \(error)")
+      }
+    }
     
     func add(){
-        songs.append(Song(id: 4, name: name, key: key))
+        let newSong = Song(context: viewContext)
+        newSong.key = key
+        newSong.name = name
+        
+        saveContext()
     }
     
     
@@ -22,10 +40,10 @@ struct SongsView: View {
                     .font(.system(size:56.0))
                     .foregroundColor(Color("lightb"))
                     ScrollView{
-                        ForEach(songs) { song in
+                        ForEach(songs, id: \.self) { song in
                             HStack{
-                                Text(song.name).foregroundColor(Color(.white))
-                                Text(song.key).foregroundColor(Color("lightb"))
+                                Text(song.name ?? "").foregroundColor(Color(.white))
+                                Text(song.key ?? "").foregroundColor(Color("lightb"))
                             }
                         }
                     }.padding()
@@ -67,14 +85,14 @@ struct SongsView: View {
                 
                 Spacer()
                 HStack(spacing: 95){
-                    NavigationLink(destination: SongsView(songs: $songs)) {
+                    NavigationLink(destination: SongsView()) {
                         VStack{
                            Image(systemName: "music.note")
                           Text("Home").foregroundColor(.white)
                        }
                     }
                     
-                    NavigationLink(destination: SongsView(songs: $songs)) {
+                    NavigationLink(destination: SongsView()) {
                         VStack{
                             Image(systemName: "music.note.list")
                             Text("Songs").foregroundColor(.white)
@@ -105,6 +123,6 @@ struct SongsView: View {
 
 struct SongsView_Previews: PreviewProvider {
     static var previews: some View {
-        SongsView(songs: .constant([Song(id: 1, name: "Heart Shaped Box", key: "A")]))
+        SongsView()
     }
 }
