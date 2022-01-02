@@ -7,7 +7,7 @@ struct SongsView: View {
     @State private var key: String = ""
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Song.name, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Song.id, ascending: true)],
         animation: .default)
     var songs: FetchedResults<Song>
     
@@ -28,6 +28,11 @@ struct SongsView: View {
     }
     
     
+    func delete(song: Song){
+        viewContext.delete(song)
+        saveContext()
+    }
+    
     var body: some View {
         VStack{
         ZStack {
@@ -44,7 +49,7 @@ struct SongsView: View {
                             HStack{
                                 Text(song.name ?? "").foregroundColor(Color(.white))
                                 Text(song.key ?? "").foregroundColor(Color("lightb"))
-                            }
+                            }.onTapGesture(count: 1) {self.delete(song: song)}
                         }
                     }.padding()
                 }
@@ -80,7 +85,7 @@ struct SongsView: View {
                  .padding(15)
                  .background(Color("lightb"))
                  .cornerRadius(10)
-                 .onTapGesture(count: 2) {self.add()}
+                 .onTapGesture(count: 1) {self.add()}
             }.padding()
                 
                 Spacer()
@@ -121,8 +126,25 @@ struct SongsView: View {
     }
 }
 
+extension PersistenceController {
+    static var storeForSongs: PersistenceController{
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+
+        for _ in 0..<10 {
+            let song = Song(context: viewContext)
+            song.name = "Song Name"
+            song.key = "E"
+        }
+
+        try! viewContext.save()
+        return result
+    }
+}
+
 struct SongsView_Previews: PreviewProvider {
     static var previews: some View {
-        SongsView()
+       return SongsView()
+        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

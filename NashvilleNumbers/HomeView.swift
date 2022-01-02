@@ -6,7 +6,7 @@ struct HomeView: View {
     @State var keys: [Key] = []
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Song.name, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Song.id, ascending: true)],
         animation: .default)
     var songs: FetchedResults<Song>
 
@@ -154,6 +154,6 @@ struct HomeView_Previews: PreviewProvider {
             Note(id:1,number:1,noteName: "B")
         ])]//,
                 // songs: songs //Song(id: 1, name: "Heart Shaped Box", key: "A")
-     )
+        ).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
    }
 }

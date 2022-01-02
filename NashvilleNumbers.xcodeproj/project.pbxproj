@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		483B2EB42741C6DC00184E12 /* tenet.png in Resources */ = {isa = PBXBuildFile; fileRef = 483B2EB32741C6DC00184E12 /* tenet.png */; };
+		48702B9C27811B58000BF391 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48702B9B27811B58000BF391 /* PersistanceController.swift */; };
 		489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB3270938C500C3172B /* AppDelegate.swift */; };
 		489CEEB6270938C500C3172B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB5270938C500C3172B /* SceneDelegate.swift */; };
 		489CEEB8270938C500C3172B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CEEB7270938C500C3172B /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 		48E4F9432740776B00AE2461 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E4F9422740776B00AE2461 /* Key.swift */; };
 		48E4F947274092D900AE2461 /* keys.json in Resources */ = {isa = PBXBuildFile; fileRef = 48E4F946274092D900AE2461 /* keys.json */; };
 		48F02BF22774ED0A00C9954C /* SetlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F02BF12774ED0A00C9954C /* SetlistView.swift */; };
+		48FE9FC32781356B00EC7C29 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE9FC22781356B00EC7C29 /* StorageProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		483B2EB32741C6DC00184E12 /* tenet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tenet.png; sourceTree = "<group>"; };
+		48702B9B27811B58000BF391 /* PersistanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistanceController.swift; path = NashvilleNumbers/PersistanceController.swift; sourceTree = SOURCE_ROOT; };
 		489CEEB0270938C500C3172B /* NashvilleNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NashvilleNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489CEEB3270938C500C3172B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489CEEB5270938C500C3172B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		48E4F9422740776B00AE2461 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		48E4F946274092D900AE2461 /* keys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keys.json; sourceTree = "<group>"; };
 		48F02BF12774ED0A00C9954C /* SetlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistView.swift; sourceTree = "<group>"; };
+		48FE9FC22781356B00EC7C29 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				48B6C712277043CB008278EC /* HomeView.swift */,
 				48F02BF12774ED0A00C9954C /* SetlistView.swift */,
 				48BF082A277E86B2002B83D0 /* CoreDataStack.swift */,
+				48FE9FC22781356B00EC7C29 /* StorageProvider.swift */,
 			);
 			path = NashvilleNumbers;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 		48BF082C277EA6F6002B83D0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				48702B9B27811B58000BF391 /* PersistanceController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 			files = (
 				48B6C713277043CB008278EC /* HomeView.swift in Sources */,
 				48E4F9412740403700AE2461 /* KeyView.swift in Sources */,
+				48FE9FC32781356B00EC7C29 /* StorageProvider.swift in Sources */,
 				48BF082B277E86B2002B83D0 /* CoreDataStack.swift in Sources */,
 				48E4F9432740776B00AE2461 /* Key.swift in Sources */,
 				489CEEB4270938C500C3172B /* AppDelegate.swift in Sources */,
@@ -326,6 +333,7 @@
 				48B9015C276FBF8E00E4B0FD /* RoundedCorners.swift in Sources */,
 				489CEEB8270938C500C3172B /* ContentView.swift in Sources */,
 				48B90160276FD51E00E4B0FD /* SongsView.swift in Sources */,
+				48702B9C27811B58000BF391 /* PersistanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
