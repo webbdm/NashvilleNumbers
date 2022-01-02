@@ -60,23 +60,25 @@ struct HomeView: View {
                           }.padding(25)
                        }
                            
-                       VStack(){
-                          Text("Songs")
-                           .padding(20)
-                           .font(.system(size:56.0))
+                        VStack(spacing: 0){
+                          Text("Setlist")
+                           .padding(10)
+                           .font(.system(size:36.0))
                            .foregroundColor(Color("lightb"))
                            
                         ScrollView(.vertical){
                         ForEach(songs, id: \.self) { song in
-                               HStack(alignment: .firstTextBaseline, spacing: 175){
+                               HStack(alignment: .firstTextBaseline, spacing: 0){
                                     song.name.map(Text.init)
                                        .frame(maxWidth: .infinity, alignment: .leading)
                                        .foregroundColor(.white)
                                 Text(song.key ?? "")
                                        .foregroundColor(Color("lightb"))
-                               }.padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 20))
+                               }.padding(EdgeInsets(top: 0, leading: 20, bottom: 1, trailing: 20))
                            }
                         }
+                        Spacer()
+                        Spacer()
                         Spacer()
                        
                         HStack(spacing: 95){
