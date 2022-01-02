@@ -10,19 +10,19 @@ struct KeyView: View {
             VStack(){
                 Text("Key Of")
                 .font(.system(size: 20.0))
-                .foregroundColor(.white)
+                    .foregroundColor(Color.white)
                 Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
                 .font(.system(size: 60.0))
-                .foregroundColor(.white)
+                .foregroundColor(Color("lightb"))
             }
             Spacer()
             Text("Select")
             .font(.title)
-            .foregroundColor(.white)
+                .foregroundColor(Color.white)
             .padding()
             .overlay(
                RoundedRectangle(cornerRadius: 15)
-                   .stroke(Color.white, lineWidth: 3))
+                   .stroke(Color("lightb"), lineWidth: 3))
         }
         .padding()
         .background(
@@ -36,7 +36,7 @@ struct KeyView: View {
                 Text(String(note.number))
                     .frame(alignment: .leading )
                     .font(.system(size: 60.0))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color("lightb"))
                 Spacer()
                 
                 Text("-")
@@ -45,7 +45,7 @@ struct KeyView: View {
                 Spacer()
                 
                 Text(note.noteName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil)).font(.system(size: 60.0))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color("lightb"))
             }.frame(maxWidth: .infinity)
         }
 

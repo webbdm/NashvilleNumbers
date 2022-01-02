@@ -11,11 +11,11 @@ struct PersistenceController {
         for _ in 0..<10 {
         let song1 = Song(context: viewContext)
         song1.name = "Heart Shaped Box"
-        song1.key = "A"
+        song1.key = "A#"
             
         let song2 = Song(context: viewContext)
         song2.name = "Friends In Low Places"
-        song2.key = "A"
+        song2.key = "B"
         }
 
         do {

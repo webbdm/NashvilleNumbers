@@ -48,7 +48,7 @@ struct HomeView: View {
                                       Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
                                       .frame(width: 200, height: 320)
                                       .font(.system(size: 100.0))
-                                       .foregroundColor(.white)
+                                        .foregroundColor(Color("lightb"))
                                       .fixedSize(horizontal: false, vertical: true)
                                       .multilineTextAlignment(.center)
                                       .padding()
@@ -89,7 +89,7 @@ struct HomeView: View {
                                }
                             }
                             
-                            NavigationLink(destination: SongsView()) {
+                            NavigationLink(destination: SongsView().navigationBarBackButtonHidden(true)) {
                                 VStack{
                                     Image(systemName: "music.note.list")
                                     Text("Songs").foregroundColor(.white)
