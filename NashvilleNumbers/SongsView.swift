@@ -25,6 +25,9 @@ struct SongsView: View {
         newSong.name = name
         
         saveContext()
+        
+        key = ""
+        name = ""
     }
     
     
@@ -32,6 +35,7 @@ struct SongsView: View {
         viewContext.delete(song)
         saveContext()
     }
+    
     
     var body: some View {
         VStack{
@@ -51,10 +55,11 @@ struct SongsView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding()
                                 Text(song.key ?? "").foregroundColor(Color("panel"))
-                                    .padding()
+                                    .frame(maxWidth: 30, maxHeight: .infinity)
+                                     .padding()
                                      .background(Color("lightb"))
                             }
-                            .frame(maxWidth: .infinity)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color("panel"))
                             .cornerRadius(10)
                             .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
@@ -79,6 +84,7 @@ struct SongsView: View {
                         
                         VStack(alignment: .leading){
                            Text("Key").foregroundColor(Color("lightb"))
+                            .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0));
                            TextField("Key",text: $key)
                                .padding(.all, 0)
                                .cornerRadius(10)
@@ -102,31 +108,7 @@ struct SongsView: View {
                  .cornerRadius(10)
                  .onTapGesture(count: 1) {self.add()}
             }.padding()
-                
-//                Spacer()
-//                HStack(spacing: 95){
-//                    NavigationLink(destination: HomeView().navigationBarHidden(true).navigationBarBackButtonHidden(true)) {
-//                        VStack{
-//                           Image(systemName: "music.note")
-//                          Text("Home").foregroundColor(.white)
-//                       }
-//                    }
-//                    
-//                    NavigationLink(destination: SongsView().navigationBarHidden(true).navigationBarBackButtonHidden(true)) {
-//                        VStack{
-//                            Image(systemName: "music.note.list")
-//                            Text("Songs").foregroundColor(.white)
-//                        }
-//                    }
-//                    
-//                    NavigationLink(destination: SetlistView()) {
-//                        VStack{
-//                          Image(systemName: "music.note.list")
-//                          Text("Setlists").foregroundColor(.white)
-//                        }
-//                    }
-//                }.frame(maxHeight: .infinity)
-                
+            
               }.frame(maxHeight:350)
                 .padding()
                 .background(

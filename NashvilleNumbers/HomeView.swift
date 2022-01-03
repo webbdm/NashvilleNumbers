@@ -24,14 +24,10 @@ struct HomeView: View {
     }
     
     init() {
-        
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = UIColor(named: "panel")
         UITabBar.appearance().standardAppearance = tabBarAppearance
-//        UITabBar.appearance().isTranslucent = false
-//        UITabBar.appearance().backgroundColor = UIColor(named: "bluebg")
-//        UITabBar.appearance().barTintColor = UIColor(named: "bluebg")
     }
     
     var body: some View {
@@ -58,11 +54,17 @@ struct HomeView: View {
                               ForEach(keys) { key in
                                       NavigationLink(destination: KeyView(key: key)) {
                                       Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
-                                       .foregroundColor(Color("lightb"))
+                                       .foregroundColor(Color.white)
                                        .frame(width: 200, height: 320)
                                        .font(.system(size: 100.0))
-                                       .foregroundColor(Color("lightb"))
-                                       .background(Rectangle().fill(Color("panel")))
+                                       .background(
+                                            Image("note")
+                                                .renderingMode(.original)
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 200, height: 320, alignment: .center)
+                                                .blur(radius: 3)
+                                                .clipped())
                                        .cornerRadius(20)
                                    }
                               }
@@ -99,10 +101,7 @@ struct HomeView: View {
                    ).frame(maxHeight:300)
                  }.onAppear(perform: readFile)
                            
-               }//z
-                       
-               
-                       
+                }//z        
               }//.padding([.top], -50)
            }
     }
