@@ -103,29 +103,29 @@ struct SongsView: View {
                  .onTapGesture(count: 1) {self.add()}
             }.padding()
                 
-                Spacer()
-                HStack(spacing: 95){
-                    NavigationLink(destination: HomeView().navigationBarHidden(true).navigationBarBackButtonHidden(true)) {
-                        VStack{
-                           Image(systemName: "music.note")
-                          Text("Home").foregroundColor(.white)
-                       }
-                    }
-                    
-                    NavigationLink(destination: SongsView().navigationBarHidden(true).navigationBarBackButtonHidden(true)) {
-                        VStack{
-                            Image(systemName: "music.note.list")
-                            Text("Songs").foregroundColor(.white)
-                        }
-                    }
-                    
-                    NavigationLink(destination: SetlistView()) {
-                        VStack{
-                          Image(systemName: "music.note.list")
-                          Text("Setlists").foregroundColor(.white)
-                        }
-                    }
-                }.frame(maxHeight: .infinity)
+//                Spacer()
+//                HStack(spacing: 95){
+//                    NavigationLink(destination: HomeView().navigationBarHidden(true).navigationBarBackButtonHidden(true)) {
+//                        VStack{
+//                           Image(systemName: "music.note")
+//                          Text("Home").foregroundColor(.white)
+//                       }
+//                    }
+//                    
+//                    NavigationLink(destination: SongsView().navigationBarHidden(true).navigationBarBackButtonHidden(true)) {
+//                        VStack{
+//                            Image(systemName: "music.note.list")
+//                            Text("Songs").foregroundColor(.white)
+//                        }
+//                    }
+//                    
+//                    NavigationLink(destination: SetlistView()) {
+//                        VStack{
+//                          Image(systemName: "music.note.list")
+//                          Text("Setlists").foregroundColor(.white)
+//                        }
+//                    }
+//                }.frame(maxHeight: .infinity)
                 
               }.frame(maxHeight:350)
                 .padding()

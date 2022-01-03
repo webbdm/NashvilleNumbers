@@ -6,8 +6,26 @@ struct ContentView: View {
        
     }
     
+    func tabbarItem(text: String, image: String) -> some View {
+        VStack {
+            Image(systemName: image)
+                .imageScale(.large)
+            Text(text)
+        }
+    }
+    
     var body: some View {
-            HomeView()
+           TabView() {
+              HomeView().tabItem{
+                   self.tabbarItem(text: "Home", image: "music.note")
+              }
+              SongsView().tabItem{
+               self.tabbarItem(text: "Songs", image: "music.note.list")
+              }
+              SetlistView().tabItem{
+               self.tabbarItem(text: "Setlist", image: "music.note.list")
+              }
+           }
     }
     
 struct ContentView_Previews: PreviewProvider {
@@ -16,29 +34,3 @@ struct ContentView_Previews: PreviewProvider {
        }
     }
 }
-
-//extension UIColor {
-//    convenience init(red: Int, green: Int, blue: Int) {
-//        let newRed = CGFloat(red)/255
-//        let newGreen = CGFloat(green)/255
-//        let newBlue = CGFloat(blue)/255
-//
-//        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
-//    }
-//}
-//
-//
-//extension UITabBarController {
-//    override open func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let standardAppearance = UITabBarAppearance()
-//
-//        let tabColor = UIColor(red: 0, green: 70, blue: 95)
-//        standardAppearance.backgroundColor = tabColor
-//
-//        standardAppearance.shadowColor = tabColor
-//        standardAppearance.backgroundImage = UIImage(named: "texture")
-//
-//        tabBar.standardAppearance = standardAppearance
-//    }
-//}

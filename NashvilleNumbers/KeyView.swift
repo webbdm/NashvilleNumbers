@@ -30,7 +30,7 @@ struct KeyView: View {
                 .fill(Color("panel"))
         )
         
-        VStack(spacing: 10){
+        VStack(spacing: 2){
             ForEach(key.notes) { note in
             HStack(){
                 Text(String(note.number))
