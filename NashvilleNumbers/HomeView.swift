@@ -73,6 +73,7 @@ struct HomeView: View {
                            
                         VStack(spacing: 0){
                           Text("Setlist")
+                            .frame(maxWidth: .infinity)
                            .padding(10)
                            .font(.system(size:36.0))
                            .foregroundColor(Color("lightb"))
@@ -98,7 +99,7 @@ struct HomeView: View {
                            .fill(Color("panel"))
                            .edgesIgnoringSafeArea(.bottom)
                            
-                   ).frame(maxHeight:300)
+                   ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity, alignment: .topLeading)
                  }.onAppear(perform: readFile)
                            
                 }//z        
