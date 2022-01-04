@@ -5,11 +5,16 @@ struct SongsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var name: String = ""
     @State private var key: String = ""
+    @State var editMode: Bool = false
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Song.id, ascending: true)],
         animation: .default)
     var songs: FetchedResults<Song>
+    
+    init(){
+        UITableViewCell.appearance().backgroundColor = UIColor(named: "bluebg")
+    }
     
     func saveContext() {
       do {
@@ -17,6 +22,10 @@ struct SongsView: View {
       } catch {
         print("Error saving managed object context: \(error)")
       }
+    }
+    
+    func setEdit() {
+        self.editMode.toggle()
     }
     
     func add(){
@@ -48,12 +57,31 @@ struct SongsView: View {
                     .padding(0)
                     .font(.system(size:56.0))
                     .foregroundColor(Color("lightb"))
+                    HStack(){
+                    Spacer()
+                    Image(systemName:"pencil.circle")
+                        .font(.system(size: 20))
+                        .foregroundColor(Color(.white))
+                        .onTapGesture {self.setEdit()}
+                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 30))
                     ScrollView(){
                         ForEach(songs, id: \.self) { song in
+                            
                             HStack{
-                                Text(song.name ?? "").foregroundColor(Color(.white))
+                                Text(song.name ?? "")
+                                    .foregroundColor(Color(.white))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding()
+                               if self.editMode {
+                                Image(systemName: "trash").foregroundColor(Color(.red))
+                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                                    .onTapGesture {
+                                        self.delete(song: song)
+                                    }
+                               }
+                               else{
+                                EmptyView()
+                               }
                                 Text(song.key ?? "").foregroundColor(Color("panel"))
                                     .frame(maxWidth: 30, maxHeight: .infinity)
                                      .padding()
@@ -63,7 +91,6 @@ struct SongsView: View {
                             .background(Color("panel"))
                             .cornerRadius(10)
                             .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
-                            .onTapGesture(count: 1) {self.delete(song: song)}
                         }
                     }.frame(maxHeight: .infinity).padding()
                 }.frame(maxHeight: .infinity)
@@ -119,7 +146,7 @@ struct SongsView: View {
               )
             }
          }
-       }
+        }
     }
 }
 
