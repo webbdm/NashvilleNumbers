@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct KeyView: View {
+   @Environment(\.presentationMode) var presentationMode
    var key: Key
     
    var body: some View {

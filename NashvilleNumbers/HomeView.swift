@@ -4,6 +4,8 @@ import CoreData
 struct HomeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State var keys: [Key] = []
+    @State var selectedKey : Key? = nil
+    @State var showingKey : Bool = false
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Song.id, ascending: true)],
@@ -31,12 +33,10 @@ struct HomeView: View {
     }
     
     var body: some View {
-           NavigationView{
                    VStack(){
                      ZStack {
                        Color("bluebg").edgesIgnoringSafeArea(.all)
 
-                           
                        VStack{
                            HStack{
                                Text("Nashville")
@@ -52,21 +52,28 @@ struct HomeView: View {
                        ScrollView(.horizontal){
                           HStack(spacing: 50){
                               ForEach(keys) { key in
-                                      NavigationLink(destination: KeyView(key: key)) {
-                                      Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil))
-                                       .foregroundColor(Color.white)
-                                       .frame(width: 200, height: 320)
-                                       .font(.system(size: 100.0))
-                                       .background(
-                                            Image("note")
-                                                .renderingMode(.original)
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(width: 200, height: 320, alignment: .center)
-                                                .blur(radius: 3)
-                                                .clipped())
-                                       .cornerRadius(20)
-                                   }
+                                  Button(action:{
+                                      self.selectedKey = key
+                                      showingKey.toggle()
+                                  }, label:{
+                                      Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil)
+                                      )
+                                      .foregroundColor(Color.white)
+                                      .frame(width: 200, height: 320)
+                                      .font(.system(size: 100.0))
+                                      .background(
+                                        Image("note")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 200, height: 320, alignment: .center)
+                                        .blur(radius: 3)
+                                        .clipped()
+                                      ).cornerRadius(20)
+                                  })
+                                      .sheet(isPresented: $showingKey, content: {
+                                          KeyView(key:selectedKey!)
+                                      })
                               }
                           }.frame(minHeight: 325).padding(25)
                        }.frame(maxHeight: .infinity)
@@ -102,9 +109,8 @@ struct HomeView: View {
                    ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity, alignment: .topLeading)
                  }.onAppear(perform: readFile)
                            
-                }//z        
-              }//.padding([.top], -50)
-           }
+                }// Z-Stack
+              }
     }
     private func readFile(){
               let url = Bundle.main.url(forResource: "keys", withExtension: "json")!
@@ -112,6 +118,7 @@ struct HomeView: View {
               let decoder = JSONDecoder()
               let jsonData = try! decoder.decode(JSONData.self, from:data)
               self.keys = jsonData.keys
+              self.selectedKey = self.keys[0]
       }
       
 }
