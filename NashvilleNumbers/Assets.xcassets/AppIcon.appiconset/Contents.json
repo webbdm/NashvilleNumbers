@@ -31,11 +31,13 @@
       "size" : "40x40"
     },
     {
+      "filename" : "nn_app_icon_120x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "nn_app_icon_180x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"

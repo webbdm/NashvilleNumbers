@@ -33,9 +33,10 @@ struct HomeView: View {
     }
     
     var body: some View {
+        NavigationView{
                    VStack(){
                      ZStack {
-                       Color("bluebg").edgesIgnoringSafeArea(.all)
+                         Color("bluebg").edgesIgnoringSafeArea(.all)
 
                        VStack{
                            HStack{
@@ -72,6 +73,12 @@ struct HomeView: View {
                                       ).cornerRadius(20)
                                   })
                                       .sheet(isPresented: $showingKey, content: {
+                                          Spacer()
+                                          Spacer()
+                                          Spacer()
+                                          Spacer()
+                                          Spacer()
+                                          Spacer()
                                           KeyView(key:selectedKey!)
                                       })
                               }
@@ -110,7 +117,7 @@ struct HomeView: View {
                  }.onAppear(perform: readFile)
                            
                 }// Z-Stack
-              }
+                   }}
     }
     private func readFile(){
               let url = Bundle.main.url(forResource: "keys", withExtension: "json")!
