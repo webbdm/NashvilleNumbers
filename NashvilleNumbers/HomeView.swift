@@ -33,23 +33,24 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationView{
-                   VStack(){
-                     ZStack {
-                         Color("bluebg").edgesIgnoringSafeArea(.all)
+            VStack(){
+                ZStack(alignment: .top){
+                       Color("bluebg").edgesIgnoringSafeArea(.all)
 
-                       VStack{
-                           HStack{
-                               Text("Nashville")
-                                   .font(.system(size: 40.0))
-                                   .fontWeight(.heavy)
-                                   .foregroundColor(.white)
-                               Text("Numbers")
-                                   .foregroundColor(.white)
-                                   .font(.system(size: 40.0))
-                                   .fontWeight(.thin)
-                           }
-                           
+                  VStack(spacing: 10){
+                   Spacer()
+                   HStack{
+                      Text("Nashville")
+                          .font(.system(size: 40.0))
+                          .fontWeight(.heavy)
+                          .foregroundColor(.white)
+                      Text("Numbers")
+                          .foregroundColor(.white)
+                          .font(.system(size: 40.0))
+                          .fontWeight(.thin)
+                    }
+
+                    GeometryReader { geo in
                        ScrollView(.horizontal){
                           HStack(spacing: 50){
                               ForEach(keys) { key in
@@ -60,14 +61,15 @@ struct HomeView: View {
                                       Text(key.keyName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil)
                                       )
                                       .foregroundColor(Color.white)
-                                      .frame(width: 200, height: 320)
+                                      .frame(
+                                        width: geo.size.width * 0.50,
+                                        height: geo.size.height * 0.99)
                                       .font(.system(size: 100.0))
                                       .background(
                                         Image("note")
                                         .renderingMode(.original)
                                         .resizable()
                                         .scaledToFill()
-                                        .frame(width: 200, height: 320, alignment: .center)
                                         .blur(radius: 3)
                                         .clipped()
                                       ).cornerRadius(20)
@@ -82,9 +84,12 @@ struct HomeView: View {
                                           KeyView(key:selectedKey!)
                                       })
                               }
-                          }.frame(minHeight: 325).padding(25)
-                       }.frame(maxHeight: .infinity)
-                           
+                          }.padding(25)
+                       }
+                    } //geo
+                      Spacer()
+                      Spacer()
+                      Spacer()
                         VStack(spacing: 0){
                           Text("Setlist")
                             .frame(maxWidth: .infinity)
@@ -96,29 +101,32 @@ struct HomeView: View {
                         ForEach(songs, id: \.self) { song in
                                HStack(alignment: .firstTextBaseline, spacing: 0){
                                     song.name.map(Text.init)
+                                       .padding(10)
                                        .frame(maxWidth: .infinity, alignment: .leading)
                                        .foregroundColor(.white)
                                 Text(song.key ?? "")
-                                       .foregroundColor(Color("lightb"))
-                               }.padding(EdgeInsets(top: 0, leading: 20, bottom: 1, trailing: 20))
+                                       .frame(maxWidth: 30, maxHeight: .infinity)
+                                       .padding(10)
+                                       .background(Color("lightb"))
+                                       .foregroundColor(Color("panel"))
+                               }
+                               .background(Color("bluebg"))
+                               .cornerRadius(10)
+                               .padding(EdgeInsets(top: 0, leading: 20, bottom: 1, trailing: 20))
                            }
                         }
-                        Spacer()
-                        Spacer()
-                        Spacer()
                        
                                           
                    }.background(
                        RoundedCornersShape(corners: [.topLeft, .topRight], radius: 35)
                            .fill(Color("panel"))
                            .edgesIgnoringSafeArea(.bottom)
-                           
-                   ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity, alignment: .topLeading)
+                   ).frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                  }.onAppear(perform: readFile)
                            
                 }// Z-Stack
-                   }}
-    }
+            } // V-Stack
+    }// View
     private func readFile(){
               let url = Bundle.main.url(forResource: "keys", withExtension: "json")!
               let data = try! Data(contentsOf: url)

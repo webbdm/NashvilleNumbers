@@ -140,10 +140,12 @@ struct SongsView: View {
                                         self.delete(song: song)
                                     }.animation(.default)
 
-                                Text(song.key ?? "").foregroundColor(Color("panel"))
+                                Text(song.key ?? "")
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("panel"))
                                     .frame(maxWidth: 30, maxHeight: .infinity)
-                                     .padding()
-                                     .background(Color("lightb"))
+                                    .padding()
+                                    .background(Color("lightb"))
                             }
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .background(Color("panel"))
