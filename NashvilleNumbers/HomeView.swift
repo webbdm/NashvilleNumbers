@@ -75,12 +75,12 @@ struct HomeView: View {
                                       ).cornerRadius(20)
                                   })
                                       .sheet(isPresented: $showingKey, content: {
-                                          Spacer()
-                                          Spacer()
-                                          Spacer()
-                                          Spacer()
-                                          Spacer()
-                                          Spacer()
+//                                          Spacer()
+//                                          Spacer()
+//                                          Spacer()
+//                                          Spacer()
+//                                          Spacer()
+//                                          Spacer()
                                           KeyView(key:selectedKey!)
                                       })
                               }

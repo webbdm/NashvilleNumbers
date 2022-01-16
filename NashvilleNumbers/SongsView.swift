@@ -141,7 +141,7 @@ struct SongsView: View {
                                     }.animation(.default)
 
                                 Text(song.key ?? "")
-                                    .fontWeight(.heavy)
+                                    .fontWeight(.regular)
                                     .foregroundColor(Color("panel"))
                                     .frame(maxWidth: 30, maxHeight: .infinity)
                                     .padding()

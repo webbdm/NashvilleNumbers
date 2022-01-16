@@ -30,22 +30,23 @@ struct KeyView: View {
             RoundedCornersShape(corners: [.topLeft, .topRight], radius: 15)
                 .fill(Color("panel"))
         )
-        
+
+    GeometryReader{ geo in
         VStack(spacing: 2){
             ForEach(key.notes) { note in
             HStack(){
                 Text(String(note.number))
                     .frame(alignment: .leading )
-                    .font(.system(size: 60.0))
+                    .font(.system(size: geo.size.height * 0.24))
                     .foregroundColor(Color("lightb"))
                 Spacer()
-                
+
                 Text("-")
                     .frame(alignment: .leading )
                     .font(.title)
                 Spacer()
-                
-                Text(note.noteName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil)).font(.system(size: 60.0))
+
+                Text(note.noteName.replacingOccurrences(of: "b", with: "♭", options: .literal, range: nil)).font(.system(size: geo.size.height * 0.24))
                     .foregroundColor(Color("lightb"))
             }.frame(maxWidth: .infinity)
         }
@@ -55,18 +56,20 @@ struct KeyView: View {
     .background(
         RoundedCornersShape(corners: [.bottomLeft, .bottomRight], radius: 15)
         .stroke(Color("panel"), lineWidth: 3)
-        
+
     )
-        
+    }// Geo
+
     Spacer()
     .frame(alignment: .leading )
-         
+
     Spacer()
     Spacer()
+       
     }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
     .padding(.leading,20)
     .padding(.trailing,20)
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color("bluebg").edgesIgnoringSafeArea(.all))
     
 }
